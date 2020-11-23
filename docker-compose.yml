@@ -2,7 +2,9 @@ version: '3'
 
 services:
   alice:
-    build: alice/
+    build:
+      context: alice/.
+      dockerfile: Dockerfile
     image: alice:1.0
     container_name: alice
     ports:
@@ -10,7 +12,9 @@ services:
     depends_on:
       - bob
   bob:
-    build: bob/
+    build:
+      context: bob/.
+      dockerfile: Dockerfile
     image: bob:1.0
     container_name: bob
     ports:
